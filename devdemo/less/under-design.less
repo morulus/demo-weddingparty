@@ -1,0 +1,267 @@
+.under-design(@mobile: false) {	
+	
+	>img {
+		max-width:100%;
+	}
+	a {
+		font-style:italic;
+		color:black;
+	}
+	h2 {
+		
+		font-size:24px;
+		text-transform:uppercase;
+		margin:0 0 39px 0;
+		padding:0 32px;
+		font-weight:300;
+	}
+	hr {
+		height:9px;
+		background-color:black;
+		border:0;
+		margin: 0 0 36px 0;
+	}
+	article {
+		& when (@mobile = false) {
+			margin:0 32px 34px 32px;
+		}
+		h3 {
+			font-weight:300;
+			font-family:"Arial";
+			font-size:18px;
+			margin:0 0 22px 0;
+		}
+		ol {
+			padding:0px;
+			margin:0px;
+			list-style:none;
+			>li {
+				padding:0px;
+				font-weight:500;
+			}
+		}
+
+		ul {
+			padding:0px;
+			margin:0 0 19px 0;
+			list-style:none;
+			>li {
+				padding:0px;
+				font-weight:500;
+			}
+		}
+
+		/* Ticket */
+		.ticket {
+			margin:0 0 18px 0;
+			time {
+				text-transform:uppercase;
+				text-decoration:underline;
+				display:block;
+				margin:0 0 17px 0;
+				font-size:18px;
+			}
+			p {
+				margin:0px;
+			}
+		}
+
+		/* Passangers list */
+		.passengers-list {
+			margin-bottom:32px;
+			table {
+				th {
+					text-transform: uppercase;
+					text-align:left;
+					padding:0 0 22px 0;
+					& when (@mobile = true) {
+						
+						font-size:10px;
+					}
+				}
+				td {
+					
+					text-align:left;
+					& when (@mobile = true) {
+						min-width:140px;
+						font-size:10px;
+					}
+
+					& when (@mobile = false) {
+						min-width:190px;
+						&:last-child {
+							min-width:140px;
+						}
+					}
+					&:first-child {
+						
+						
+						background:url(../images/under/pass-list-dottes.png) 0% 80% repeat-x transparent;
+						span {
+							background-color:white;
+							padding:5px 2px 5px 0;
+							
+						}
+					}
+				}
+			}
+		}
+
+		.journal-tab {
+			margin:0 0 30px 0;
+			fieldset {
+				display:block;
+				margin:0 0 16px 0;
+				border:0px;
+				padding:0;
+				vertical-align: top;
+
+
+				label {
+					vertical-align: top;
+					width:137px;
+					font-size:18px;
+					font-weight: 600;
+					display:flex;
+					float:left;
+				}
+
+				summary {
+					display:inline;
+					display:inline-block;
+					float:left;
+				}
+
+				&:after {
+					content: "";
+					width:100%;
+					display:block;
+					clear:both;
+				}
+			}
+		}
+
+		/* Journal */
+		.journal {
+			margin:0 0 48px 0;
+			h4 {
+				margin:0 0 28px 0;
+				font-size:18px;
+				font-weight: 600;
+			}
+
+			fieldset {
+				display:block;
+				margin:0 0 30px 0;
+				border:0px;
+				padding:0;
+
+				label {
+					width:130px;
+					font-size:18px;
+					font-weight: 600;
+					display:inline-block;
+				}
+
+				input[type=text] {
+					min-width:206px;
+					&.readonly {
+						border:0px;
+					}
+				}
+
+				summary {
+					display:inline;
+					display:inline-block;
+				}
+			}
+		}
+
+		p {
+			line-height:33px;
+			&.low {
+				line-height:normal;
+			}
+			&.m30 {
+				margin:0 0 30px 0;
+			}
+
+			&.delta {
+				background:url(../images/under/section-pic.png) 0px 10px no-repeat;
+				padding-left:11px;
+			}
+		}
+
+	}
+	.info {
+		padding:0 32px;
+		p {
+			padding:11px 0;
+		}
+	}
+
+	/* Form style */
+	form {
+		fieldset {
+			margin:0 0 14px 0;
+			border:0px;padding:0px;
+		}
+
+		label {
+			display:block;
+			margin:0 0 6px 0;
+		}
+
+		input[type=text] {
+			height:19px;
+			background-color:white;
+			border:1px #2d2d2d solid;
+			min-width:206px;
+		}
+	}	
+
+	button {
+		height:35px;
+		padding: 0 15px;
+		background-color:#2d2d2d;
+		color:white;
+		border:0px;
+		text-transform: uppercase;
+	}
+
+	dl {
+					font-size:14px;
+
+					dt {
+						text-transform:uppercase;
+						background:url(../images/under/section-pic.png) 0px 3px no-repeat;
+						padding-left:11px;
+					}
+
+					dd {
+						padding:0px;
+						margin:0px;
+						margin-bottom:22px;
+					}
+
+					&.high {
+						dt {
+							line-height:33px;
+							background-position:0px 10px;
+						}
+
+						dd {
+							line-height:33px;
+						}
+					}
+				}
+
+				big {
+					& when (@mobile = true) {
+						font-size:40px;
+					}
+					& when (@mobile = false) {
+						font-size:60px;
+					}
+				}
+}

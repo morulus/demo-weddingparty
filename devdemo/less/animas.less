@@ -1,0 +1,38 @@
+#pincher-wrapper {
+	width:716px;
+	height:246px;
+	overflow:hidden;
+	position:absolute;
+}
+
+#pincher-anima {
+	opacity:0;
+	
+	&.walkp1 {
+		opacity:1;
+		transition:transform 7s linear;
+		transform:translateX(450px);
+	}
+
+	&.walkp2 {
+		opacity:1;
+		transition:transform 7s linear;
+		transform:translateX(900px);
+	}
+}
+
+.turtle {
+	visibility:hidden;
+}
+
+.turtle-anima {
+	visibility:visible;
+	transition: top 5s, left 15s, right 15s, opacity 400ms, transform 400ms;
+	transition-timing-function: linear;
+	opacity:1;
+}
+
+.turtle-disapierd {
+	opacity:0;
+	transform:scale(0.8);
+}
