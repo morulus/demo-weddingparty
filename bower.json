@@ -1,0 +1,26 @@
+{
+  "name": "demo-weddingparty",
+  "version": "1.0.1",
+  "homepage": "https://github.com/morulus/demo-weddingparty",
+  "authors": [
+    "Vladimir Morulus <vladimirmorulus@gmail.com>"
+  ],
+  "description": "Demo of Wedding party web-site deployer",
+  "main": "pack/pack.js",
+  "moduleType": [
+    "amd"
+  ],
+  "keywords": [
+    "demo"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "webpack.config.js",
+    "node_modules",
+    "bower_components",
+    "devdemo/",
+    "test",
+    "tests"
+  ]
+}
