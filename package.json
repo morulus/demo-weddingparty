@@ -23,7 +23,8 @@
   "description": "Demo of Wedding party web-site",
   "main": "pack/pack.js",
   "scripts": {
-    "test": "webpack-dev-server"
+    "test": "webpack-dev-server",
+    "start": "node deploy.js"
   },
   "repository": {
     "type": "git",
