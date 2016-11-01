@@ -1,6 +1,6 @@
 {
   "name": "demo-weddingparty",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "dependencies": {},
   "devDependencies": {
     "babel-core": "^6.17.0",
