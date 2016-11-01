@@ -4,6 +4,10 @@ import Brahma from './lib/Brahma';
 import template from './template.html';
 import styles from './less/lam.less';
 
+function triggerHandler() {
+	alert('Trigger');
+}
+
 function delay(callback) {
 	return function() {
 		var args = Array.from(arguments);
@@ -24,25 +28,27 @@ function xreplace(text, data) {
 }
 
 export default function deploy(container, location) {
+	let destroyers = [];
 	Brahma(container).html(xreplace(template, {
 		location,
 		cssScope: styles.lam
 	}));
+
 	var dollhouse = Brahma(container).app('dollhouse', {
 	});
-	Brahma("#menu").find('>div>a').each(function() {
-		Brahma(this).bind('click', function() {
-			switch(Brahma(this).data('trigger')) {
-				case "gohome":
-					window.scrollTo(0, 0);
-				break;
-				default:
-					alert('В разработке!');
-				break;
-			}
-			return false;
-		});
-	});
+	// Brahma("#menu").find('>div>a').each(function() {
+	// 	Brahma(this).bind('click', function() {
+	// 		switch(Brahma(this).data('trigger')) {
+	// 			case "gohome":
+	// 				window.scrollTo(0, 0);
+	// 			break;
+	// 			default:
+	// 				alert('В разработке!');
+	// 			break;
+	// 		}
+	// 		return false;
+	// 	});
+	// });
 
 	// Animation
 	Brahma("[data-cartoon]").each(function() {
@@ -126,32 +132,44 @@ export default function deploy(container, location) {
 	Обрабатываем кликабельность
 	*/
 	/* Клик на джентельмене*/
-	Brahma("#anim-gentleman").bind('click', function() {
-		alert('Trigger');
-	});
+	Brahma("#anim-gentleman").bind('click', triggerHandler);
 
 	/* Клик на жирафе */
-	Brahma("#anim-giraffe").bind('click', function() {
-		alert('Trigger');
-	});
+	Brahma("#anim-giraffe").bind('click', triggerHandler);
 
 	/* Клик на невесте */
-	Brahma("#anim-maid").bind('click', function() {
-		alert('Trigger');
-	});
+	Brahma("#anim-maid").bind('click', triggerHandler);
 
 	/* Клик на медведе */
-	Brahma("#anim-gift").bind('click', function() {
-		alert('Trigger');
-	});
+	Brahma("#anim-gift").bind('click', triggerHandler);
 
 	/* Клик на усах */
-	Brahma("#anim-usi").bind('click', function() {
-		alert('Trigger');
-	});
+	Brahma("#anim-usi").bind('click', triggerHandler);
 
 	/* Клик на торте */
-	Brahma("#anim-tort").bind('click', function() {
-		alert('Trigger');
+	Brahma("#anim-tort").bind('click', triggerHandler);
+
+	destroyers.push(() => {
+		/* Клик на джентельмене*/
+		Brahma("#anim-gentleman").unbind('click', triggerHandler);
+
+		/* Клик на жирафе */
+		Brahma("#anim-giraffe").unbind('click', triggerHandler);
+
+		/* Клик на невесте */
+		Brahma("#anim-maid").unbind('click', triggerHandler);
+
+		/* Клик на медведе */
+		Brahma("#anim-gift").unbind('click', triggerHandler);
+
+		/* Клик на усах */
+		Brahma("#anim-usi").unbind('click', triggerHandler);
+
+		/* Клик на торте */
+		Brahma("#anim-tort").unbind('click', triggerHandler);
+	});
+
+	destroyers.push(() => {
+		Brahma(container).html('');
 	});
 }
