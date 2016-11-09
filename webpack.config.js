@@ -1,4 +1,5 @@
 var path = require("path");
+var webpack = require('webpack');
 module.exports = {
 	entry: {
 		src: './devdemo/deploy.js'
@@ -18,7 +19,9 @@ module.exports = {
 			},
 			{
 				test: /\.(png|jpg|jpeg|gif|woff)$/,
-				loader: 'url-loader?name=[path][name].[ext]'
+				loaders: [
+					'url-loader?name=[path][name].[ext]'
+				]
 			},
 			{
 				test: /\.(html|htm)$/,
@@ -40,6 +43,8 @@ module.exports = {
 			}
 		]
 	},
-	plugins: [],
+	plugins: [
+    new webpack.optimize.UglifyJsPlugin({minimize: true})
+  ],
 	extensions: []
 };
